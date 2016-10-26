@@ -9,4 +9,8 @@ describe("stopwatch", function() {
       done();
     },1500);
   });
+
+  it("Start function is triggered", function() {
+    expect(bool).toEqual(true);
+  });
 });
