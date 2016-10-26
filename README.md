@@ -25,8 +25,8 @@ Stretch goals:
 
 ## Project Plan
 
-Day 1:
+Day 1:  
 ...Suspicious lack of github repo or commits...suspicious lack of plan
 
-Day 2:
+Day 2:  
 Learning from our mistakes:
