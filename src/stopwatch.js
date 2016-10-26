@@ -1,12 +1,11 @@
 var timer = 0;
-
-setInterval(function() {
-  timer += 1;
-},1000);
-
 var bool = false;
 
 function start () {
   return bool = true;
 }
-start();
+
+setInterval(function() {
+  start();
+  timer += 1;
+},1000);
