@@ -22,3 +22,11 @@ Stretch goals:
 
 - Ping-pong method
 - Using Jasmine
+
+## Project Plan
+
+Day 1:  
+...Suspicious lack of github repo or commits...suspicious lack of plan
+
+Day 2:  
+Learning from our mistakes:
