@@ -30,7 +30,6 @@ QUnit.test( "Timer begins at 0", function( assert ) {
 QUnit.test( "Start function is triggered", function( assert ) {
   start();
   assert.ok( active == true, "Passed!" );
-  clearInterval(intervalId);
 });
 
 // What do you about tests that contradict eachother? Should you not be breaking down this small or is it okay to do them and then comment them out?
@@ -44,8 +43,8 @@ QUnit.test( "Start function is triggered", function( assert ) {
 
 QUnit.test("timer totals 3, 3 seconds after start is called", function(assert) {
   var done = assert.async();
-  start();
   setTimeout(function(){
+    start();
     assert.ok(updatedMs === 3000, "Passed!" );
     done;
   }, 3000);
