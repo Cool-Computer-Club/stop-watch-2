@@ -58,6 +58,7 @@ QUnit.test("Start function increments seconds (after 3 seconds)", function( asse
 });
 
 QUnit.test("Stop function pauses seconds (checking at 3 seconds)", function( assert ) {
+  clearInterval(intervalId);
   var done = assert.async();
   var seconds1;
   var seconds2;
@@ -72,4 +73,38 @@ QUnit.test("Stop function pauses seconds (checking at 3 seconds)", function( ass
       done();
     }, 3100);
   },5000);
+});
+
+QUnit.test( "Reset function has been triggered after start function", function( assert ) {
+  start();
+  reset();
+  assert.ok( active == false, "Passed!" );
+});
+
+QUnit.test( "Reset function pauses seconds (checking at 3 seconds)", function( assert ) {
+  clearInterval(intervalId);
+  var done = assert.async();
+  var seconds1;
+  var seconds2;
+  start();
+  reset();
+  setTimeout(function(){
+    seconds1 = seconds;
+    setTimeout(function(){
+      seconds2 = seconds;
+      assert.ok( seconds1 === seconds2, "Passed!" );
+      clearInterval(intervalId);
+      done();
+    }, 3100);
+  },5000);
+});
+
+QUnit.test( "Reset function returns seconds to 0 (3 seconds) after start triggered", function( assert ) {
+  var done = assert.async();
+  start();
+  setTimeout(function(){
+    reset();
+    assert.ok( seconds === 0, "Passed!" );
+    done();
+  }, 3100);
 });

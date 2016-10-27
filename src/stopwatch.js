@@ -18,3 +18,9 @@ function stop () {
   active = false;
   clearInterval(intervalId);
 }
+
+function reset () {
+  active = false;
+  stop();
+  seconds = 0;
+}
