@@ -22,4 +22,5 @@ function stop () {
 function reset () {
   active = false;
   stop();
+  seconds = 0;
 }

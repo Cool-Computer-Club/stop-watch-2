@@ -98,3 +98,13 @@ QUnit.test( "Reset function pauses seconds (checking at 3 seconds)", function( a
     }, 3100);
   },5000);
 });
+
+QUnit.test( "Reset function returns seconds to 0 (3 seconds) after start triggered", function( assert ) {
+  var done = assert.async();
+  start();
+  setTimeout(function(){
+    reset();
+    assert.ok( seconds === 0, "Passed!" );
+    done();
+  }, 3100);
+});
