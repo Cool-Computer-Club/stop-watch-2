@@ -23,10 +23,29 @@
   // });
 // });
 
-QUnit.test( "Timer starts at 0", function( assert ) {
-  assert.ok( timer == 0, "Passed!" );
+QUnit.test( "Timer begins at 0", function( assert ) {
+  assert.ok( timer === 0, "Passed!" );
 });
 
 QUnit.test( "Start function is triggered", function( assert ) {
-  assert.ok( bool == true, "Passed!" );
+  start();
+  assert.ok( active == true, "Passed!" );
+});
+
+// What do you about tests that contradict eachother? Should you not be breaking down this small or is it okay to do them and then comment them out?
+// QUnit.test( "Stop function is triggered", function( assert ) {
+//   assert.ok( active == false, "Passed!" );
+// });
+
+// QUnit.test( "Start adds 1 to timer", function( assert ) {
+//   assert.ok( newTimer === 1, "Passed!" );
+// });
+
+QUnit.test("timer totals 3, 3 seconds after start is called", function(assert) {
+  var done = assert.async();
+  setTimeout(function(){
+    start();
+    assert.ok(updatedMs === 3000, "Passed!" );
+    done;
+  }, 3000);
 });
