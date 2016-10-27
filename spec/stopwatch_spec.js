@@ -42,11 +42,11 @@ QUnit.test( "Start function is triggered", function( assert ) {
 //   assert.ok( newTimer === 1, "Passed!" );
 // });
 
-QUnit.test( "newTimer totals 3, 3.5seconds after start is called", function(assert) {
+QUnit.test("timer totals 3, 3 seconds after start is called", function(assert) {
   var done = assert.async();
   start();
   setTimeout(function(){
-    assert.ok(timer === 3, "Passed!" );
-    done();
+    assert.ok(updatedMs === 3000, "Passed!" );
+    done;
   }, 3000);
 });
