@@ -5,7 +5,9 @@ function start () {
   return bool = true;
 }
 
-setInterval(function() {
-  start();
-  timer += 1;
-},1000);
+start();
+
+// setInterval(function() {
+//   start();
+//   timer += 1;
+// },1000);
