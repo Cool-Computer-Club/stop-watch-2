@@ -41,7 +41,7 @@ QUnit.test( "Start function is triggered (check after 1 second)", function( asse
   }, 1000);
 });
 
-QUnit.test( "Stop function is triggered", function( assert ) {
+QUnit.test( "Stop function has been triggered after start function", function( assert ) {
   start();
   stop();
   assert.ok( active == false, "Passed!" );
