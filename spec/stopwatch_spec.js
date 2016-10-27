@@ -59,6 +59,8 @@ QUnit.test("Start function increments seconds (after 3 seconds)", function( asse
 
 QUnit.test("Stop function pauses seconds (checking at 3 seconds)", function( assert ) {
   var done = assert.async();
+  var seconds1;
+  var seconds2;
   start();
   stop();
   setTimeout(function(){
