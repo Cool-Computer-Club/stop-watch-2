@@ -1,11 +1,19 @@
 var timer = 0;
-var bool = false;
+var newTimer;
+var active = false;
 
 function start () {
-  return bool = true;
+  newTimer = 1;
+  return active = true;
 }
 
+// function stop () {
+//   return active = false;
+// }
+
 start();
+//
+// stop();
 
 // setInterval(function() {
 //   start();
