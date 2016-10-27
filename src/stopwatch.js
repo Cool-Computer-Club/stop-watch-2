@@ -1,15 +1,20 @@
-var timer = 0;
+var seconds = 0;
 var intervalId;
 var updatedMs;
-// var newTimer;
 var active = false;
+var startingMs;
 
 function start () {
   active = true;
-  var startingMs = Date.now();
+  startingMs = Date.now();
   intervalId = setInterval(function(){
-    // timer += 1;
-    // newTimer = timer;
     updatedMs = Date.now() - startingMs;
+    var updatedSec = new Date(updatedMs)
+    seconds = updatedSec.getUTCSeconds();
   }, 1000);
+}
+
+function stop () {
+  active = false;
+  clearInterval(intervalId);
 }
