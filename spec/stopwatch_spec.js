@@ -23,11 +23,12 @@
   // });
 // });
 
-QUnit.test( "Timer starts at 0", function( assert ) {
-  assert.ok( timer == 0, "Passed!" );
+QUnit.test( "Timer begins at 0", function( assert ) {
+  assert.ok( timer === 0, "Passed!" );
 });
 
 QUnit.test( "Start function is triggered", function( assert ) {
+  start();
   assert.ok( active == true, "Passed!" );
 });
 
@@ -37,5 +38,14 @@ QUnit.test( "Start function is triggered", function( assert ) {
 // });
 
 QUnit.test( "Start adds 1 to timer", function( assert ) {
-  assert.ok( newTimer == 1, "Passed!" );
+  assert.ok( newTimer === 1, "Passed!" );
+});
+
+QUnit.test( "newTimer totals 3, 3.5seconds after start is called", function( ) {
+  var done = assert.async();
+  start();
+  setTimeout(function(){
+    ok( timer === 3, "Passed!" );
+    done();
+  }, 3500);
 });

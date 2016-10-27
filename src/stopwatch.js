@@ -3,19 +3,15 @@ var newTimer;
 var active = false;
 
 function start () {
-  newTimer = 1;
-  return active = true;
+  timer += 1;
+  newTimer = timer;
+  // setInterval(){
+    return active = true;
+  // }, 1000);
 }
 
 // function stop () {
 //   return active = false;
 // }
 
-start();
-//
 // stop();
-
-// setInterval(function() {
-//   start();
-//   timer += 1;
-// },1000);
