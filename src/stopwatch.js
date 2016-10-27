@@ -1,17 +1,14 @@
 var timer = 0;
-var newTimer;
+var updatedMs;
+// var newTimer;
 var active = false;
 
 function start () {
-  timer += 1;
-  newTimer = timer;
-  // setInterval(){
-    return active = true;
-  // }, 1000);
+  active = true;
+  var startingMs = Date.now();
+  setInterval(function(){
+    // timer += 1;
+    // newTimer = timer;
+    updatedMs = Date.now() - startingMs;
+  }, 1000);
 }
-
-// function stop () {
-//   return active = false;
-// }
-
-// stop();
