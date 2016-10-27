@@ -3,8 +3,6 @@ var intervalId;
 var updatedMs;
 var active = false;
 var startingMs;
-var seconds1;
-var seconds2;
 
 function start () {
   active = true;
