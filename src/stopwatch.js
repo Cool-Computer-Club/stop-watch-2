@@ -14,3 +14,7 @@ function start () {
     seconds = updatedSec.getUTCSeconds();
   }, 1000);
 }
+
+function stop () {
+  active = false;
+}
