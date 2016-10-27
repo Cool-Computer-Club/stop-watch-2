@@ -57,3 +57,18 @@ QUnit.test("timer totals 3, 3 seconds after start is called", function( assert )
     done2();
   }, 3100);
 });
+
+QUnit.test("Stop pauses seconds variable", function( assert ) {
+  var done3 = assert.async();
+  start();
+  stop();
+  setTimeout(function(){
+    seconds1 = seconds;
+    setTimeout(function(){
+      seconds2 = seconds;
+      assert.ok( seconds1 === seconds2, "Passed!" );
+      clearInterval(intervalId);
+      done3();
+    }, 3100);
+  },5000);
+});

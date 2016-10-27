@@ -4,6 +4,8 @@ var updatedMs;
 var active = false;
 var startingMs;
 var seconds;
+var seconds1;
+var seconds2;
 
 function start () {
   active = true;
