@@ -23,8 +23,22 @@
 //   });
 // });
 
-QUnit.test( "Timer begins at 0", function( assert ) {
-  assert.ok( timer === 0, "Passed!" );
+// QUnit.test( "Start adds 1 to timer", function( assert ) {
+//   assert.ok( newTimer === 1, "Passed!" );
+// });
+
+QUnit.test( "\'Seconds\' begins at 0", function( assert ) {
+  assert.ok( seconds === 0, "Passed!" );
+});
+
+QUnit.test( "Start function is triggered (check after 1 second)", function( assert ) {
+  var done = assert.async();
+  start();
+  setTimeout(function(){
+    assert.ok( active == true, "Passed!" );
+    clearInterval(intervalId);
+    done();
+  }, 1000);
 });
 
 QUnit.test( "Stop function is triggered", function( assert ) {
@@ -33,33 +47,18 @@ QUnit.test( "Stop function is triggered", function( assert ) {
   assert.ok( active == false, "Passed!" );
 });
 
-QUnit.test( "Start function is triggered", function( assert ) {
-  var done1 = assert.async();
-  start();
-  setTimeout(function(){
-    assert.ok( active == true, "Passed!" );
-    clearInterval(intervalId);
-    done1();
-  }, 1000);
-});
-
-
-// QUnit.test( "Start adds 1 to timer", function( assert ) {
-//   assert.ok( newTimer === 1, "Passed!" );
-// });
-
-QUnit.test("timer totals 3, 3 seconds after start is called", function( assert ) {
-  var done2 = assert.async();
+QUnit.test("Start function increments seconds (after 3 seconds)", function( assert ) {
+  var done = assert.async();
   start();
   setTimeout(function(){
     assert.ok( seconds === 3, "Passed!" );
     clearInterval(intervalId);
-    done2();
+    done();
   }, 3100);
 });
 
-QUnit.test("Stop pauses seconds variable", function( assert ) {
-  var done3 = assert.async();
+QUnit.test("Stop function pauses seconds (checking at 3 seconds)", function( assert ) {
+  var done = assert.async();
   start();
   stop();
   setTimeout(function(){
@@ -68,7 +67,7 @@ QUnit.test("Stop pauses seconds variable", function( assert ) {
       seconds2 = seconds;
       assert.ok( seconds1 === seconds2, "Passed!" );
       clearInterval(intervalId);
-      done3();
+      done();
     }, 3100);
   },5000);
 });

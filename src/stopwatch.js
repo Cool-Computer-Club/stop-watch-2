@@ -1,9 +1,8 @@
-var timer = 0;
+var seconds = 0;
 var intervalId;
 var updatedMs;
 var active = false;
 var startingMs;
-var seconds;
 var seconds1;
 var seconds2;
 
@@ -19,4 +18,5 @@ function start () {
 
 function stop () {
   active = false;
+  clearInterval(intervalId);
 }
