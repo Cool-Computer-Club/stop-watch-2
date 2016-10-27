@@ -80,3 +80,21 @@ QUnit.test( "Reset function has been triggered after start function", function( 
   reset();
   assert.ok( active == false, "Passed!" );
 });
+
+QUnit.test( "Reset function pauses seconds (checking at 3 seconds)", function( assert ) {
+  clearInterval(intervalId);
+  var done = assert.async();
+  var seconds1;
+  var seconds2;
+  start();
+  reset();
+  setTimeout(function(){
+    seconds1 = seconds;
+    setTimeout(function(){
+      seconds2 = seconds;
+      assert.ok( seconds1 === seconds2, "Passed!" );
+      clearInterval(intervalId);
+      done();
+    }, 3100);
+  },5000);
+});

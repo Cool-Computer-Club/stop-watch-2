@@ -21,4 +21,5 @@ function stop () {
 
 function reset () {
   active = false;
+  stop();
 }
