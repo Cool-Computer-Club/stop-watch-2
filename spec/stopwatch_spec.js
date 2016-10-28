@@ -111,6 +111,6 @@ QUnit.test( "Reset function returns seconds to 0 (3 seconds) after start trigger
 
 
 QUnit.test( "When start button is clicked, start function is called", function(assert) {
-  whyNot.onclick();
+  startButton.onclick();
   assert.ok( active === true, "Passed!");
 });
