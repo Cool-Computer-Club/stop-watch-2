@@ -22,7 +22,7 @@
 //     },2500);
 //   });
 // });
-
+//
 // QUnit.test( "Start adds 1 to timer", function( assert ) {
 //   assert.ok( newTimer === 1, "Passed!" );
 // });
@@ -107,4 +107,10 @@ QUnit.test( "Reset function returns seconds to 0 (3 seconds) after start trigger
     assert.ok( seconds === 0, "Passed!" );
     done();
   }, 3100);
+});
+
+
+QUnit.test( "When start button is clicked, start function is called", function(assert) {
+  whyNot.onclick();
+  assert.ok( active === true, "Passed!");
 });
