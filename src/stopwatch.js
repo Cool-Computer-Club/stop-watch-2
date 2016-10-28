@@ -4,7 +4,6 @@ var updatedMs;
 var active = false;
 var startingMs;
 var startButton = document.getElementById("start");
-console.log(whyNot);
 
 startButton.onclick = function() {start()};
 
@@ -15,6 +14,7 @@ function start () {
     updatedMs = Date.now() - startingMs;
     var updatedSec = new Date(updatedMs)
     seconds = updatedSec.getUTCSeconds();
+    document.getElementsByClassName("display")[0].textContent = seconds;
   }, 1000);
 }
 
