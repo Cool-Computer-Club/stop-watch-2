@@ -116,6 +116,7 @@ QUnit.test( "When start button is clicked, start function is called", function(a
 });
 
 QUnit.test( "When start button is clicked display equals seconds", function(assert) {
+  reset();
   startButton.onclick();
   assert.ok( document.getElementsByClassName("display")[0].textContent == seconds, "Passed!");
 });

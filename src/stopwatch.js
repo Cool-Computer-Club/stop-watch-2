@@ -13,8 +13,7 @@ function start () {
   intervalId = setInterval(function(){
     updatedMs = Date.now() - startingMs;
     var updatedSec = new Date(updatedMs)
-    seconds = updatedSec.getUTCSeconds();
-    document.getElementsByClassName("display")[0].textContent = seconds;
+    document.getElementsByClassName("display")[0].textContent, seconds = updatedSec.getUTCSeconds();
   }, 1000);
 }
 
