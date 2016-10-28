@@ -3,10 +3,10 @@ var intervalId;
 var updatedMs;
 var active = false;
 var startingMs;
-var whyNot = document.getElementsByTagName("button")[0];
+var startButton = document.getElementById("start");
 console.log(whyNot);
 
-whyNot.onclick = function() {start()};
+startButton.onclick = function() {start()};
 
 function start () {
   active = true;
@@ -28,9 +28,3 @@ function reset () {
   stop();
   seconds = 0;
 }
-
-
-
-// if (document.getElementsByClassName("startButton")[0].onclick) {
-//   start();
-// }
